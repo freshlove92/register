@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import palette from '../palette';
+import { Link } from 'react-router-dom';
 
-const StyledBtn = styled.button `
+const SBtn = css `
     border: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -11,10 +12,10 @@ const StyledBtn = styled.button `
     color: white;
     outline: none;
     cursor: pointer;
-    background: ${palette.Gray[8]};
+    background: ${palette.Violet[5]};
 
     &:hover {
-        background: ${palette.Gray[6]};
+        background: ${palette.Violet[3]};
     }
 
     ${props => 
@@ -30,21 +31,33 @@ const StyledBtn = styled.button `
     ${props =>
         props.Cyan &&
         css `
-            background: ${palette.Cyan[5]};
+            background: ${palette.Gray[8]};
             &:hover{
-                background: ${palette.Cyan[4]};
+                background: ${palette.Gray[6]};
             }
         `
     }
+    &:disabled{
+        background: ${palette.Cyan[3]};
+        color: ${palette.Cyan[5]};
+        cursor: not-allowed;
+    }
 
+`
 
+const StyledBtn = styled.button`
+    ${SBtn}
+`
+const StyledLink = styled(Link)`
+    ${SBtn}
 `
 
 const Button = (props) => {
 
     return (
-       <StyledBtn {...props} />
-   
+        props.to?(<StyledLink {...props} Cayn={props.Cyan ? 1:0}/>) : 
+                 (<StyledBtn {...props} />)
+        
     );
 };
 
