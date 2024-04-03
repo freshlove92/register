@@ -50,20 +50,20 @@ const Header = ({loginState, userID, logout}) => {
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
                     <div className='right'> 
 
-                        {loginState === true ? 
-                            (
-                            <>
-                            <UserDiv>{userID}님, 환영합니다　</UserDiv>
-                            <Button onClick={()=>logout(false)}>로그아웃</Button>
-                            </>):
-                            (<>
-                            <UserDiv>로그인 하세요　</UserDiv>
-                            <Button><Link to="/login">로그인</Link></Button>
-                            <Button><Link to="/register">회원가입</Link></Button>
-                            </>
-                            )
+                {loginState === true ? 
+                    (
+                    <>
+                    <UserDiv>{userID}님, 환영합니다　</UserDiv>
+                    <Button onClick={()=>logout(false)}>로그아웃</Button>
+                    </>):
+                    (<>
+                    <UserDiv>로그인 하세요　</UserDiv>
+                    <Button to="/login">로그인</Button>
+                    <Button to="/register">회원가입</Button>
+                    </>
+                    )
 
-                        }
+                }
                             
                     </div>
         

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../libs/styles/common/Button';
+import Button from '../../libs/styles/common/Button';
 import { Link,useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import palette from '../libs/styles/palette';
+import palette from '../../libs/styles/palette';
 import { connect } from 'react-redux';
-import { sign_up, login } from '../modules/auth';
+import { sign_up, login } from '../../modules/auth';
 
 
 const FormDiv=styled.div`
@@ -86,7 +86,7 @@ const Form = (props) => {
             }else{
                 const newUser = {
                         username: e.target.username.value,
-                        password: e.target.password.value
+                        password: e.target.password.value,
                     }
                 sign_up(newUser)
                 alert("가입 완료!")
@@ -109,7 +109,6 @@ const Form = (props) => {
                 setError("아이디가 틀렸습니다")
             }
             
-            
         }
         }
 
@@ -127,15 +126,14 @@ const Form = (props) => {
             </form>
             <br/>
             
-            
             <br/>
             <br/>
             <FootDiv>
-                 {type === 'login' ? (
-                        <Link to='/register'>회원가입</Link>
-                    ) : (
-                        <Link to='/login'>로그인</Link>
-                    )}
+                {type === 'login' ? (
+                    <Link to='/register'>회원가입</Link>
+                ) : (
+                    <Link to='/login'>로그인</Link>
+                )}
             </FootDiv>
         </FormDiv>
     );

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../libs/styles/common/Header';
 import { connect } from 'react-redux';
 // import { login } from '../modules/auth';
+import Button from '../libs/styles/common/Button';
 
 const MainPage = (props) => {
     
@@ -14,6 +15,7 @@ const MainPage = (props) => {
             <Header loginState={loginState} userID={userID} />
             <div style={{position:'absolute', left:"50%", top: "50px"}}>
             <h1>Main</h1>
+            <Button to='/write'>포스팅하기</Button>
 
             {/* <div style={{display: "flex", flexDirection: "column"}}>
             <Link to="/register">회원가입</Link>
@@ -24,7 +26,6 @@ const MainPage = (props) => {
 
     );
 };
-
 
 
 export default connect(

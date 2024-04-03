@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import palette from '../libs/styles/palette';
+import palette from '../../libs/styles/palette';
 
 const TemplateDiv = styled.div`
    position: absolute;

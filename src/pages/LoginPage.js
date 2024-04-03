@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from '../components/Login';
-import Template from '../components/Template';
+import Login from '../components/auth/Login';
+import Template from '../components/auth/Template';
 
 
 const LoginPage = () => {

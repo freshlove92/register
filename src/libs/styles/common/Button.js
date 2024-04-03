@@ -3,6 +3,8 @@ import styled, {css} from 'styled-components';
 import palette from '../palette';
 import { Link } from 'react-router-dom';
 
+// `${동적인거}`
+
 const SBtn = css `
     border: none;
     border-radius: 4px;
@@ -13,6 +15,7 @@ const SBtn = css `
     outline: none;
     cursor: pointer;
     background: ${palette.Violet[5]};
+
 
     &:hover {
         background: ${palette.Violet[3]};
@@ -26,7 +29,7 @@ const SBtn = css `
             width: 100px;
             font-size: 1.125rem   
         `
-    }
+    } 
 
     ${props =>
         props.Cyan &&
@@ -50,6 +53,7 @@ const StyledBtn = styled.button`
 `
 const StyledLink = styled(Link)`
     ${SBtn}
+    text-decoration: none;
 `
 
 const Button = (props) => {
